@@ -1,0 +1,5 @@
+{
+    "require": {
+        "josprox/jossecurity": "^1.8"
+    }
+}

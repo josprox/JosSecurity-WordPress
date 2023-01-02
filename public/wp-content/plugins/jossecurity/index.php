@@ -1,11 +1,12 @@
 <?php
 /*
-Plugin Name: JosSecurity
+Plugin Name: JosSecurity WP
 Plugin URL: https://jossecurity.josprox.com/
 Description: Agrega todas las funcionabilidades de JosSecurity en wordpress, se incluirá not pay, head, footer, etc.
-Version: 1.8.2
-Author: Jose Luis Melchor Estrada
+Version: 1.8.5
+Author: Jose Luis Melchor Estrada - JosSecurity - El Diamante Soluciones TI.
 Author URI: https://josprox.com/
+GitHub Plugin URI: https://github.com/josprox/JosSecurity_Plugin
 */
 if(file_exists(__DIR__ . DIRECTORY_SEPARATOR ."../../../../jossecurity.php")){
     include (__DIR__ . DIRECTORY_SEPARATOR ."../../../../jossecurity.php");
@@ -44,6 +45,15 @@ function jossecurity_mensaje(){
                             <option value="DP">Desactivar didn´t pay</option>
                             <?php
                         }
+                        if(!file_exists(__DIR__ . DIRECTORY_SEPARATOR . "basic/admin_custom.php")){
+                            ?>
+                            <option value="CAC">Activar diseño customizado de JosSecurity para el sistema de administración</option>
+                            <?php
+                        }else{
+                            ?>
+                            <option value="DAC">Desactivar diseño customizado de JosSecurity para el sistema de administración</option>
+                            <?php 
+                        }
                         if(!file_exists(__DIR__ . DIRECTORY_SEPARATOR . "smtp/wp-mail.php")){
                             ?>
                             <option value="CSMTP">Activar el sistema SMTP configurado previamente en el sistema JosSecurity</option>
@@ -74,14 +84,31 @@ function jossecurity_mensaje(){
 function jossecurity_init(){
     jossecurity_mensaje();
 }
-
+function head_basic(){
+    ?>
+<!-- JosSecurity está funcionando -->
+<meta name="viewport" content= "width=device-width, user-scalable=no">
+<!-- JQUERY -->
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<link rel="shortcut icon" href="../../resourses/img/logo transparente/vector/default.svg" type="image/x-icon">
+<!-- Fontawesome -->
+<link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" defer>
+<!-- SweetAlert2 -->
+<script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <?php
+}
 if(file_exists(__DIR__ . DIRECTORY_SEPARATOR . "smtp/wp-mail.php")){
     include (__DIR__ . DIRECTORY_SEPARATOR . "smtp/wp-mail.php");
 }
 
+include (__DIR__ . DIRECTORY_SEPARATOR . "updater.php");
+
 add_action('admin_menu', 'jossecurity_admin_menu');
-add_action('admin_head', 'head_admin');
-add_action('admin_footer', 'footer_admin');
+if(file_exists(__DIR__ . DIRECTORY_SEPARATOR . "basic/admin_custom.php")){
+    include (__DIR__ . DIRECTORY_SEPARATOR . "basic/admin_custom.php");
+}else{
+    add_action('admin_head', 'head_basic');
+}
 add_action('wp_head', 'head');
 add_action('wp_footer', 'footer');
 ?>

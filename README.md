@@ -1,10 +1,6 @@
-# JosSecurity WordPress
+# JosSecurity
 
 <img src="./resourses/img/logo%20azul/cover.png" alt="JosSecurity seguridad a tu alcance."/>
-
-## ¿Qué es JosSecurity WordPress?
-
-Descarga y trabaja con JosSecurity como un sistema principal y WordPress como el sistema secundario.
 
 ## ¿Qué es JosSecurity?
 
@@ -15,6 +11,27 @@ JosSecurity es un framework y librería al mismo tiempo, debido a que, el sistem
 Al igual que muchas librerías, JosSecurity funciona gracias a los Hooks, en este caso, el sistema de hooks se llama “jossitos”, cada jossito es una funcionalidad de php, si necesitas una consulta en la base de datos básica o hasta la mas compleja, cada jossito se encargará de traerte los datos y tu no necesitarás nada mas que usar la función y llenar los datos.
 
 Puedes consultar cada "jossito" en la documentación, <a href="https://jossecurity.josprox.com/documentacion">da clic aquí</a>.
+
+## ¿Cuáles son las funciones básicas del sistema?
+
+Por defecto, el sistema puede conectarse de manera automática la base de datos, las funciones son las siguientes:
+
+-	Conexión sencilla.
+
+	conect_mysqli();
+
+-	Conexión PDO.
+
+	conect_mysql();
+
+
+También puedes usar recaptcha para integrarla en el formulario sencillo, solo tendrías que llamar a la siguiente función.
+
+	recaptcha();
+
+Podrás consultar más funciones en el archivo “jossecurity.php” o en el sitio web oficial “jossecurity.josprox.com”.
+
+## ¿Qué contiene?
 
 A parte de las funciones principales, JosSecurity cuenta con el apartado llamado “plugins” para poder integrar cualquier necesidad del sistema, es por eso que, JosSecurity no es un framework al 100% ya que te permite integrar lo que tú necesites.
 Por defecto, después de instalar JosSecurity, viene con un panel de control para que puedas modificar a tu gusto el sistema desde un navegador sin tener que abrir un editor de códigos, podrás borrar este sistema sino lo necesitas. Su diseño está formado por Bootstrap.
@@ -28,8 +45,14 @@ Las siguientes credenciales es para un login exitoso:
 	Contraseña:
 	Andyyyo12?
 
+## Usos
+
+* Sistema JosSecurity & Wordpress disponible, da <a href="https://github.com/josprox/JosSecurity-WordPress">clic aqui</a>.
+* Plugin JosSecurity & Wordpress disponible, da <a href="https://github.com/josprox/JosSecurity_Plugin">clic aqui</a>.
+
 ### Ayúdanos
 Podrás ayudarnos si detectas algún error o si podemos mejorar algo, tendrás que visitar la página ayúdanos <a href="https://jossecurity.josprox.com/ayudanos/">dando clic aquí</a>.
+
 ### Para poder usar JosSecurity necesitará algunos requisitos mínimos:
 
 - Versión mínima requerida de PHP: 8.2.0
@@ -110,7 +133,7 @@ Tú puedes donar a través de <a href="https://www.patreon.com/jossestrada">patr
 #### Licencia.
 
 Un programa creado por JOSPROX MX/ JOSPROX Internacional.
-Licencia: CC BY-NC 4.0.
+Licencia: CC BY 4.0.
 
 <img src="./resourses/img/byncsa.jpg" alt="Creative Commons Attribution 4.0 International"/>
 

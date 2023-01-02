@@ -613,51 +613,6 @@
             "install-path": "../graham-campbell/result-type"
         },
         {
-            "name": "josprox/jossecurity",
-            "version": "V1.8.2",
-            "version_normalized": "1.8.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/josprox/JosSecurity.git",
-                "reference": "d40e04b2ccc442e7c150ee4af1bbc6a223101ffb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/josprox/JosSecurity/zipball/d40e04b2ccc442e7c150ee4af1bbc6a223101ffb",
-                "reference": "d40e04b2ccc442e7c150ee4af1bbc6a223101ffb",
-                "shasum": ""
-            },
-            "require": {
-                "evert/sitemap-php": "^1.2",
-                "mercadopago/dx-php": "^2.5",
-                "php": ">=8.2",
-                "phpmailer/phpmailer": "^6.6",
-                "vlucas/phpdotenv": "^5.4"
-            },
-            "require-dev": {
-                "rector/rector": "^0.14.8"
-            },
-            "time": "2022-12-15T01:40:03+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "CC-BY-4.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jose Luis Melchor Estrada",
-                    "email": "joss@int.josprox.com"
-                }
-            ],
-            "description": "JosSecurity es un framework y librería al mismo tiempo, debido a que, el sistema lo podrás usar como primer uso o segundo uso en tu proyecto, JosSecurity tiene herramientas para que puedas crear tu sitio web de una manera fácil y sencilla sin tener conocimientos en el back-end.",
-            "support": {
-                "issues": "https://github.com/josprox/JosSecurity/issues",
-                "source": "https://github.com/josprox/JosSecurity/tree/V1.8.2"
-            },
-            "install-path": "../josprox/jossecurity"
-        },
-        {
             "name": "mercadopago/dx-php",
             "version": "2.5.3",
             "version_normalized": "2.5.3.0",
@@ -873,6 +828,68 @@
             "install-path": "../phpoption/phpoption"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "1.9.4",
+            "version_normalized": "1.9.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "d03bccee595e2146b7c9d174486b84f4dc61b0f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d03bccee595e2146b7c9d174486b84f4dc61b0f2",
+                "reference": "d03bccee595e2146b7c9d174486b84f4dc61b0f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "time": "2022-12-17T13:33:52+00:00",
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../phpstan/phpstan"
+        },
+        {
             "name": "psr/cache",
             "version": "3.0.0",
             "version_normalized": "3.0.0.0",
@@ -923,6 +940,66 @@
                 "source": "https://github.com/php-fig/cache/tree/3.0.0"
             },
             "install-path": "../psr/cache"
+        },
+        {
+            "name": "rector/rector",
+            "version": "0.14.8",
+            "version_normalized": "0.14.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "46ee9a173a2b2645ca92a75ffc17460139fa226e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/46ee9a173a2b2645ca92a75ffc17460139fa226e",
+                "reference": "46ee9a173a2b2645ca92a75ffc17460139fa226e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.9.0"
+            },
+            "conflict": {
+                "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
+                "rector/rector-php-parser": "*",
+                "rector/rector-phpoffice": "*",
+                "rector/rector-phpunit": "*",
+                "rector/rector-symfony": "*"
+            },
+            "time": "2022-11-14T14:09:49+00:00",
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.14-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/0.14.8"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../rector/rector"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1270,5 +1347,8 @@
         }
     ],
     "dev": true,
-    "dev-package-names": []
+    "dev-package-names": [
+        "phpstan/phpstan",
+        "rector/rector"
+    ]
 }
